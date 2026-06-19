@@ -41,7 +41,7 @@ written for a non-technical audience — specifically a hospital manager.
 
 ## 🔧 Tools & Libraries
 
--Databricks
+- Databricks
 - Python 3
 - pandas
 - matplotlib
