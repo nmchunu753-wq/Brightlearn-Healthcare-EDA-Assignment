@@ -15,14 +15,15 @@ written for a non-technical audience — specifically a hospital manager.
 ## 📁 Repository Contents
 
 ```
-├── Healthcare_EDA_.ipynb       # Main Jupyter Notebook (all sections)
-├── Heathcare_dataset.csv       # Raw dataset (55,500 rows · 15 columns)
-└── README.md                   # This file
+├── Healthcare_EDA_.ipynb                          # Main Jupyter Notebook (all sections)
+├── Heathcare_dataset.csv                          # Raw dataset (55,500 rows · 15 columns)
+├── BrightLearn_Healthcare_EDA_Assignment.pdf      # Original assignment description
+└── README.md                                      # This file
 ```
 
 ---
 
-## 🗂️ Dataset
+## 📊 Dataset
 
 | Property | Detail |
 |---|---|
@@ -49,8 +50,6 @@ written for a non-technical audience — specifically a hospital manager.
 
 ## 📓 Notebook Structure
 
-The notebook is divided into 10 sections following the BrightLearn brief:
-
 | Section | Description | Marks |
 |---|---|---|
 | 01 | Data Overview — shape, dtypes, sample | 10 |
@@ -59,7 +58,7 @@ The notebook is divided into 10 sections following the BrightLearn brief:
 | 04 | Data Cleaning — duplicates removed, dates converted, bad billing handled | 15 |
 | 05 | Feature Engineering — 8 new columns using `.loc` pattern | 15 |
 | 06 | EDA Analysis & Groupby — Q7 to Q18 answered with sorted tables | 20 |
-| 07 | Visualisations — 6 labelled charts supporting the analysis | 10 |
+| 07 | Visualisations — 7 labelled charts supporting the analysis | 10 |
 | 08 | Written Insights — 6 evidence-based findings with real numbers | 15 |
 | 09 | Executive Summary — 150–200 word plain-English summary | — |
 | 10 | Recommendations — 4 actionable suggestions tied to insights | — |
@@ -68,22 +67,22 @@ The notebook is divided into 10 sections following the BrightLearn brief:
 
 ## 🛠️ Feature Engineering
 
-Eight new columns were created in Section 5:
+Eight new columns were created in Section 5 using the `.loc` pattern:
 
-| New Column | Description | Method |
-|---|---|---|
-| `Length_of_Stay` | Days between admission and discharge | Date arithmetic |
-| `Admission_Year` | Year of admission | `.dt.year` |
-| `Admission_Month` | Month number (1–12) | `.dt.month` |
-| `Admission_Month_Name` | Month name (e.g. January) | `.dt.month_name()` |
-| `Admission_Day_Name` | Weekday name (e.g. Monday) | `.dt.day_name()` |
-| `Age_Group` | Child / Young Adult / Adult / Senior / Elderly | `.loc` |
-| `Billing_Bucket` | Low / Medium / High / Very High | `.loc` |
-| `Stay_Category` | Short / Medium / Long | `.loc` |
+| New Column | Description |
+|---|---|
+| `Length_of_Stay` | Days between admission and discharge |
+| `Admission_Year` | Year of admission |
+| `Admission_Month` | Month number (1–12) |
+| `Admission_Month_Name` | Month name (e.g. January) |
+| `Admission_Day_Name` | Weekday name (e.g. Monday) |
+| `Age_Group` | Child / Young Adult / Adult / Senior / Elderly |
+| `Billing_Bucket` | Low / Medium / High / Very High |
+| `Stay_Category` | Short / Medium / Long |
 
 ---
 
-## 📊 Charts Produced
+## 📈 Charts Produced
 
 1. Bar Chart — Admissions by Medical Condition
 2. Bar Chart — Patients by Insurance Provider
@@ -106,13 +105,15 @@ Eight new columns were created in Section 5:
 
 ---
 
-## ✅ How to Run the Notebook
+## 💡 Recommendations
 
-1. Clone or download this repository
-2. Make sure `Heathcare_dataset.csv` is in the **same folder** as the notebook
-3. Open `Healthcare_EDA_.ipynb` in Jupyter Notebook or JupyterLab
-4. Click **Kernel → Restart & Run All**
-5. The notebook should complete with no errors from top to bottom
+1. **Resource Planning** — Asthma patients average 15.7 days in hospital, the longest of all conditions. Ward staffing and bed allocation should be planned around this extended occupancy to prevent bottlenecks affecting other admissions.
+
+2. **Cost Review** — 106 admissions carried invalid negative billing amounts. Each record should be individually reviewed and corrected to prevent revenue reporting errors and incorrect insurer billing.
+
+3. **Data-Collection Improvement** — All six conditions and all three test result outcomes are distributed at almost exactly equal proportions, which is statistically implausible. The data-capture process should be audited to confirm that raw records are not being normalised by an upstream system before reaching the analytics team.
+
+4. **Follow-Up Investigation** — Obesity generates the highest average bill at R25,859 per admission. This figure should be tracked annually, and if the gap between Obesity billing and the dataset average continues to widen, a dedicated cost-management review should be initiated.
 
 ---
 
@@ -122,6 +123,16 @@ Eight new columns were created in Section 5:
 - **Date columns** were converted from text to `datetime64` using `pd.to_datetime()`
 - **Negative billing amounts** (106 rows) were set to `NaN` rather than deleted — preserving all other columns for those admissions while flagging the billing figure as unreliable
 - **Patient names** were standardised to title case using `.str.title()`
+
+---
+
+## ✅ How to Run the Notebook
+
+1. Clone or download this repository
+2. Make sure `Heathcare_dataset.csv` is in the **same folder** as the notebook
+3. Open `Healthcare_EDA_.ipynb` in Jupyter Notebook or JupyterLab
+4. Click **Kernel → Restart & Run All**
+5. The notebook should complete with no errors from top to bottom
 
 ---
 
