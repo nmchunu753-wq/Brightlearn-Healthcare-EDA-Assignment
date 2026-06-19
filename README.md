@@ -15,9 +15,9 @@ written for a non-technical audience — specifically a hospital manager.
 ## 📁 Repository Contents
 
 ```
-├── Healthcare_EDA_.ipynb                          # Main Jupyter Notebook (all sections)
-├── Heathcare_dataset.csv                          # Raw dataset (55,500 rows · 15 columns)
 ├── BrightLearn_Healthcare_EDA_Assignment.pdf      # Original assignment description
+├── Heathcare_dataset.csv                          # Raw dataset (55,500 rows · 15 columns)
+├── Healthcare_EDA_.ipynb                          # Main Jupyter Notebook (all sections)
 └── README.md                                      # This file
 ```
 
@@ -50,18 +50,18 @@ written for a non-technical audience — specifically a hospital manager.
 
 ## 📓 Notebook Structure
 
-| Section | Description | Marks |
-|---|---|---|
-| 01 | Data Overview — shape, dtypes, sample | 10 |
-| 02 | Data Dictionary — all 15 columns described | — |
-| 03 | Data-Quality Checks — missing values, duplicates, unusual values | 15 |
-| 04 | Data Cleaning — duplicates removed, dates converted, bad billing handled | 15 |
-| 05 | Feature Engineering — 8 new columns using `.loc` pattern | 15 |
-| 06 | EDA Analysis & Groupby — Q7 to Q18 answered with sorted tables | 20 |
-| 07 | Visualisations — 7 labelled charts supporting the analysis | 10 |
-| 08 | Written Insights — 6 evidence-based findings with real numbers | 15 |
-| 09 | Executive Summary — 150–200 word plain-English summary | — |
-| 10 | Recommendations — 4 actionable suggestions tied to insights | — |
+| Section | Description | 
+|---|---|
+| 01 | Data Overview — shape, dtypes, sample | 
+| 02 | Data Dictionary — all 15 columns described | 
+| 03 | Data-Quality Checks — missing values, duplicates, unusual values | 
+| 04 | Data Cleaning — duplicates removed, dates converted, bad billing handled | 
+| 05 | Feature Engineering — 8 new columns using `.loc` pattern | 
+| 06 | EDA Analysis & Groupby — Q7 to Q18 answered with sorted tables | 
+| 07 | Visualisations — 7 labelled charts supporting the analysis | 
+| 08 | Written Insights — 6 evidence-based findings with real numbers |
+| 09 | Executive Summary — 150–200 word plain-English summary |
+| 10 | Recommendations — 4 actionable suggestions tied to insights |
 
 ---
 
